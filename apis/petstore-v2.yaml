@@ -1,0 +1,47 @@
+
+##########################
+#                        #
+#        Example         #
+#        Service         #
+#                        #
+#                        #
+##########################
+# petstore service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: petstorev2
+  name: petstorev2
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: petstorev2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: petstorev2
+    spec:
+      containers:
+      - image: soloio/petstore-example:latest
+        name: petstorev2
+        ports:
+        - containerPort: 8080
+          name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: petstorev2
+  namespace: default
+  labels:
+    service: petstorev2
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+  selector:
+    app: petstorev2
