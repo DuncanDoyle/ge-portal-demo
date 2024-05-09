@@ -31,4 +31,4 @@ printf "\Installing Portal ...\n"
 kubectl apply -f portal/petstore-portal-portal.yaml
 printf "\n"
  
-
+popd
