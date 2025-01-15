@@ -1,14 +1,14 @@
 apiVersion: portal.gloo.solo.io/v1beta1
 kind: APIProduct
 metadata:
-  name: httpbin-product
-  namespace: default
+  name: httpbin
+  namespace: httpbin
   labels:
     app: httpbin
 spec:
   displayInfo: 
     description: HTTPBin Product. We add some extra text here.
-    title: HTTPBin Product
+    title: HTTPBin Product.
   # Specify one or more version objects that will each include a list
   # of APIs that compose the version and routing for the version  
   versions:
@@ -22,7 +22,7 @@ spec:
     # operations will be imported from the doc. 
     - apiDoc:
         name: httpbin-schema
-        namespace: default
+        namespace: httpbin
     # Each imported operation must have a 'route' associated with it.
     # Here we define a route that will be used by default for all the selected APIProduct version operations.
     # You can also set overrides for this route on each individual operation.
@@ -32,7 +32,7 @@ spec:
         inlineRoute:
           backends:
           - upstream:
-              name: default-httpbin-8000
+              name: httpbin-httpbin-8000
               namespace: gloo-system
     # You can add arbitrary tags to an APIProduct version. 
     # Users will be able to search for APIs based on the available tags when they log into a portal application.

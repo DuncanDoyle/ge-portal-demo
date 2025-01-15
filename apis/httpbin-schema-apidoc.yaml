@@ -2,7 +2,7 @@ apiVersion: portal.gloo.solo.io/v1beta1
 kind: APIDoc
 metadata:
  name: httpbin-schema
- namespace: default
+ namespace: httpbin
 spec:
  ## specify the type of schema provided in this APIDoc.
  ## openApi is only option at this time.

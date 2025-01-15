@@ -1,7 +1,13 @@
 #!/bin/sh
 
-export GLOO_EDGE_VERSION="1.16.8"
-export GLOO_EDGE_PORTAL_VERSION="1.4.1"
+# export GLOO_EDGE_VERSION="1.16.9"
+export GLOO_EDGE_VERSION="1.18.2"
+# export GLOO_EDGE_PORTAL_VERSION="1.4.2"
+# export GLOO_EDGE_PORTAL_VERSION="1.4.1"
+# export GLOO_EDGE_PORTAL_VERSION="1.4.0"
+# export GLOO_EDGE_PORTAL_VERSION="1.3.6"
+# export GLOO_EDGE_PORTAL_VERSION="1.4.6"
+export GLOO_EDGE_PORTAL_VERSION="1.5.0-beta7"
 
 export GLOO_EDGE_HELM_VALUES_FILE="gloo-edge-helm-values.yaml"
 export GLOO_EDGE_PORTAL_HELM_VALUES_FILE="ge-portal-helm-values.yaml"

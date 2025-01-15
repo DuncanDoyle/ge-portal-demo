@@ -1,8 +1,9 @@
 apiVersion: portal.gloo.solo.io/v1beta1
 kind: Environment
 metadata:
-  name: dev
-  namespace: default
+  name: dev-with-an-unnecessarily-long-name
+  # name: dev
+  namespace: portal-env
 spec:
   domains:
   # If you are using Gloo Edge and the Gateway is listening on a port other than 80, 
@@ -62,7 +63,7 @@ spec:
       values:
       - httpbin
     # Configure the basepath of the API Product. Allows to use different base-paths for different API Products.
-    basePath: /httpbin
+    # basePath: /httpbin
     versions:
       tags:
       - stable
@@ -70,17 +71,51 @@ spec:
     - basic
     - gold
     - ultimate
-  # - namespaces:
-  #   - "*" 
-  #   labels:
-  #   - key: app
-  #     operator: Equals
-  #     values:
-  #       - httpbin    
-  #   versions:
-  #     tags:
-  #     - stable
-  #   usagePlans:
-  #   - basic
-  #   - gold
-  #   - ultimate
+  - namespaces:
+    - "*" 
+    labels:
+    - key: app
+      operator: Equals
+      values:
+      - httpbin2
+    # Configure the basepath of the API Product. Allows to use different base-paths for different API Products.
+    # basePath: /httpbin2
+    versions:
+      tags:
+      - stable
+    usagePlans:
+    - basic
+    - gold
+    - ultimate
+  - namespaces:
+    - "*" 
+    labels:
+    - key: app
+      operator: Equals
+      values:
+      - httpbin3
+    # Configure the basepath of the API Product. Allows to use different base-paths for different API Products.
+    # basePath: /httpbin2
+    versions:
+      tags:
+      - stable
+    usagePlans:
+    - basic
+    - gold
+    - ultimate
+  - namespaces:
+    - "*" 
+    labels:
+    - key: app
+      operator: Equals
+      values:
+      - cbp
+    # Configure the basepath of the API Product. Allows to use different base-paths for different API Products.
+    # basePath: /httpbin2
+    # versions:
+    #   tags:
+    #   - stable
+    usagePlans:
+    - basic
+    - gold
+    - ultimate

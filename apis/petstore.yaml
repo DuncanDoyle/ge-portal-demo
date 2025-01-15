@@ -26,6 +26,7 @@ spec:
     spec:
       containers:
       - image: soloio/petstore-example:latest
+        imagePullPolicy: IfNotPresent
         name: petstore
         ports:
         - containerPort: 8080

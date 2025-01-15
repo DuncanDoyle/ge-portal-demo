@@ -24,8 +24,9 @@ spec:
 
   # This will include all API product of the environment in the portal
   publishedEnvironments:
-  - name: dev
-    namespace: default
+  - name: dev-with-an-unnecessarily-long-name
+    # name: dev
+    namespace: portal-env
 
   # This allows users to view APIs without needing to log in
   allApisPublicViewable: true

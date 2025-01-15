@@ -1,7 +1,7 @@
 apiVersion: portal.gloo.solo.io/v1beta1
 kind: APIProduct
 metadata:
-  name: petstore-product
+  name: petstore-product-this-is-a-test-for-name-hashing
   namespace: default
   labels:
     app: petstore
